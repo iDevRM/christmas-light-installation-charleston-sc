@@ -83,6 +83,62 @@ nav.main-nav a:hover {
   color: #d4af37;
 }
 
+/* ---------- Nav dropdown (Services) ---------- */
+.nav-dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.dropdown-toggle .caret {
+  font-size: 0.65rem;
+  transition: transform 0.15s ease;
+}
+
+.nav-dropdown:hover .caret,
+.nav-dropdown:focus-within .caret {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 8px;
+  background: #0f2e1f;
+  border: 1px solid #1c4a34;
+  border-radius: 8px;
+  padding: 8px 0;
+  min-width: 200px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+  z-index: 200;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 18px;
+  white-space: nowrap;
+  color: #e8f2ea;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.dropdown-menu a:hover {
+  background: rgba(212, 175, 55, 0.15);
+  color: #d4af37;
+}
+
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown:focus-within .dropdown-menu {
+  display: block;
+}
+
 .nav-cta {
   background: #b91c1c;
   color: #ffffff !important;
@@ -297,34 +353,6 @@ p {
   margin: 0;
 }
 
-/* ---------- Pricing table ---------- */
-.price-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-  background: #ffffff;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(15, 46, 31, 0.08);
-}
-
-.price-table th,
-.price-table td {
-  text-align: left;
-  padding: 14px 18px;
-  border-bottom: 1px solid #e7ede8;
-}
-
-.price-table th {
-  background: #0f2e1f;
-  color: #fff;
-  font-weight: 700;
-}
-
-.price-table tr:last-child td {
-  border-bottom: none;
-}
-
 /* ---------- FAQ ---------- */
 .faq-item {
   background: #ffffff;
@@ -534,6 +562,32 @@ footer.site-footer {
     order: 3;
     width: 100%;
     justify-content: center;
+  }
+
+  .nav-dropdown {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    position: static;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    margin-top: 4px;
+    padding: 0;
+    min-width: 0;
+  }
+
+  .dropdown-menu a {
+    padding: 6px 12px;
+    text-align: center;
+    font-size: 0.88rem;
+    color: #a8bdae;
   }
 }
 
