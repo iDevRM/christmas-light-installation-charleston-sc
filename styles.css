@@ -107,9 +107,13 @@ nav.main-nav a:hover {
 .dropdown-menu {
   display: none;
   position: absolute;
+  /* Flush against the toggle (no margin-top gap): a gap here is a dead
+     zone the cursor has to cross while moving from the toggle down to
+     the menu, which drops :hover and closes the menu before a sub-link
+     can be clicked. The 8px top padding below gives the same visual
+     breathing room without creating that gap. */
   top: 100%;
   left: 0;
-  margin-top: 8px;
   background: #0f2e1f;
   border: 1px solid #1c4a34;
   border-radius: 8px;
